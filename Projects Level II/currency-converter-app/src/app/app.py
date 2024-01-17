@@ -1,4 +1,7 @@
 import streamlit as st
+from src.currency_converter import CurrencyConverter
+from src.utils import read_json
+
 
 col_header, col_image = st.columns(2)
 with col_header:
@@ -18,25 +21,35 @@ with col_image:
 st.markdown("<hr>", unsafe_allow_html=True)
 
 col1, col2, col3 = st.columns(3)
+
+all_curency = read_json("src/constants/currency_tickers.json")
+
 with col1:
-    selected_currency = st.selectbox("From currency (Base): ", ['USD', 'CAD', 'IRR'], index=0, key="c1")
+    selected_currency = st.selectbox("From currency (Base): ", all_curency, index=0, key="c1")
 
 with col2:
-    target_currency = st.selectbox("To currency: (Target)", ['USD', 'CAD', 'IRR'], index=0, key="c2")
+    target_currency = st.selectbox("To currency: (Target)", all_curency, index=0, key="c2")
 
 with col3:
     amount = st.number_input('Enter amount: ', value=0.0, key="a")
 
+obj = CurrencyConverter(selected_currency, target_currency)
+exchange_rate = obj.get_exchange_rate()
+result_amount = obj.calculate_amount(amount)
+
+
+
+
 st.markdown("<hr>", unsafe_allow_html=True)
-st.success("Exchange Rate: 1.2")
+st.success(f"Exchange Rate: {exchange_rate}")
 col_metric1, col_shape, col_metric2 = st.columns(3)
 
 with col_metric1:
-    st.metric("Base Currency", 100)
+    st.metric("Base Currency", amount)
 with col_shape:
     st.image('https://robnei.blog/wp-content/uploads/2020/08/flecha-37.png', width=130)
 with col_metric2:
-    st.metric("Converted Currency", 150)
+    st.metric("Converted Currency", result_amount)
 
 
 st.markdown("<hr>", unsafe_allow_html=True)
