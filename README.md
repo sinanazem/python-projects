@@ -12,10 +12,10 @@ Welcome to the Python Projects repository! This repository contains a collection
 ### 1. Project level |
 This category includes beginner-level Python projects. These projects are suitable for those who are just starting with Python and want to build a solid foundation.
 
-#### Project 1: [Project Name]
+#### Project 1: clock
 Description: Brief description of the project.
 
-#### Project 2: [Project Name]
+#### Project 2: hash
 Description: Brief description of the project.
 
 ...
