@@ -1,5 +1,5 @@
 <div>
-    <img src="https://static.vecteezy.com/system/resources/previews/024/010/870/original/cute-yellow-python-snake-cartoon-on-transparent-background-png.png" alt="python-snake" width="350" align="left" hspace="10">
+    
     <h1>Python Projects Repository</h1>
 </div>
 
