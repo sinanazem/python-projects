@@ -1,7 +1,4 @@
-<div>
-    
-    <h1>Python Projects Repository</h1>
-</div>
+# Python Projects Repository
 
 Welcome to the Python Projects repository! This repository contains a collection of projects categorized under different project levels. Each project is designed to help you enhance your Python programming skills and explore various aspects of the language.
 
